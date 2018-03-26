@@ -1,0 +1,23 @@
+{
+  "name": "simpleservice",
+  "version": "1.0.0",
+  "description": "\"Test service\"",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "body-parser": "^1.18.2",
+    "bunyan": "^1.8.12",
+    "config": "^1.30.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5",
+    "supertest": "^3.0.0"
+  }
+}
