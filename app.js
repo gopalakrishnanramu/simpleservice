@@ -6,6 +6,7 @@
 global.approot = require('app-root-path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const xmlparser = require('express-xml-bodyparser');
 const bunyan = require('bunyan');
 const config = require('config');
 
@@ -19,7 +20,7 @@ const appConfig = config.get('app');
 /**
  * Logger Initialization
  */
-const logger = bunyan.createLogger({
+global.logger = bunyan.createLogger({
 	name: appConfig.name,
 	streams: [
 		{
@@ -41,6 +42,7 @@ app.set('port', appConfig.port);
 
 app.use(bodyParser.json());
 app.use(bodyParser.text());
+app.use(xmlparser());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(appConfig.port, () => {
